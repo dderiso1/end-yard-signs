@@ -366,14 +366,21 @@
 
     <svg class="seal rise" style="animation-delay:.15s" viewBox="0 0 220 220" role="img" aria-label="A movement seal: a yard sign crossed out">
       <defs>
-        <path id="ring" d="M110,110 m-86,0 a86,86 0 1,1 172,0 a86,86 0 1,1 -172,0" />
+        <path id="ringTop" d="M 38,110 A 72,72 0 0 1 182,110" />
+        <path id="ringBot" d="M 26,110 A 84,84 0 0 0 194,110" />
       </defs>
       <circle cx="110" cy="110" r="104" fill="#211f18"/>
       <circle cx="110" cy="110" r="98" fill="#ece2c8"/>
       <circle cx="110" cy="110" r="92" fill="none" stroke="#211f18" stroke-width="2"/>
-      <text font-family="Saira Condensed, sans-serif" font-weight="700" font-size="15" letter-spacing="2.5" fill="#211f18">
-        <textPath href="#ring" startOffset="0">★ END YARD SIGNS ★ SIGNS DON&#39;T VOTE PEOPLE DO ★</textPath>
+      <circle cx="110" cy="110" r="64" fill="none" stroke="#211f18" stroke-width="1.5"/>
+      <text font-family="Saira Condensed, sans-serif" font-weight="700" font-size="15.5" letter-spacing="3" fill="#211f18" text-anchor="middle">
+        <textPath href="#ringTop" startOffset="50%">END YARD SIGNS</textPath>
       </text>
+      <text font-family="Saira Condensed, sans-serif" font-weight="700" font-size="13.5" letter-spacing="2" fill="#211f18" text-anchor="middle">
+        <textPath href="#ringBot" startOffset="50%">SIGNS DON&#39;T VOTE &middot; PEOPLE DO</textPath>
+      </text>
+      <text x="33" y="110" font-size="15" fill="#b3222a" text-anchor="middle" dominant-baseline="central">&#9733;</text>
+      <text x="187" y="110" font-size="15" fill="#b3222a" text-anchor="middle" dominant-baseline="central">&#9733;</text>
       <circle cx="110" cy="112" r="62" fill="#b3222a" stroke="#211f18" stroke-width="3"/>
       <g opacity=".35">
         <line x1="110" y1="112" x2="110" y2="55" stroke="#ece2c8" stroke-width="3"/>
