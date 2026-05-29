@@ -6,6 +6,22 @@
 <title>End Yard Signs — A Movement to Retire the Lawn Sign</title>
 <meta name="description" content="A movement to end yard signs, from the campaign staffers who actually knocked the doors. Signs don't vote. People do." />
 <meta name="theme-color" content="#ece2c8" />
+<link rel="canonical" href="https://end-yard-signs.vercel.app/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="End Yard Signs" />
+<meta property="og:title" content="End Yard Signs — A Movement to Retire the Lawn Sign" />
+<meta property="og:description" content="From the campaign staffers who actually knocked the doors. Signs don’t vote. People do." />
+<meta property="og:url" content="https://end-yard-signs.vercel.app/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://end-yard-signs.vercel.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="End Yard Signs movement seal: a yard sign crossed out." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="End Yard Signs — A Movement to Retire the Lawn Sign" />
+<meta name="twitter:description" content="Signs don’t vote. People do. Knock doors, not stakes." />
+<meta name="twitter:image" content="https://end-yard-signs.vercel.app/og-image.png" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%23211f18'/%3E%3Ccircle cx='50' cy='50' r='40' fill='%23b3222a'/%3E%3Crect x='32' y='30' width='36' height='26' fill='%23ece2c8' stroke='%23211f18' stroke-width='3'/%3E%3Crect x='47' y='56' width='6' height='22' fill='%23211f18'/%3E%3Cline x1='22' y1='22' x2='78' y2='78' stroke='%23211f18' stroke-width='8'/%3E%3Cline x1='22' y1='22' x2='78' y2='78' stroke='%23ece2c8' stroke-width='3'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Saira+Condensed:wght@500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
@@ -94,7 +110,17 @@
   .btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink);}
   .btn.gold{background:var(--gold);color:var(--ink);}
   .btn.ink{background:var(--ink);color:var(--paper-hi);}
-  @media(max-width:780px){.navlinks a:not(.btn){display:none;}}
+  @media(max-width:780px){
+    nav .wrap{flex-wrap:wrap;height:auto;padding-top:8px;padding-bottom:8px;gap:6px 14px;}
+    .brand{flex:1 0 auto;}
+    .navlinks{order:3;flex-basis:100%;justify-content:flex-start;gap:14px 16px;flex-wrap:wrap;}
+    .navlinks a:not(.btn){font-size:.82rem;letter-spacing:.05em;}
+    .navlinks .btn{order:2;padding:7px 13px;font-size:.82rem;}
+    section[id],header[id]{scroll-margin-top:118px;}
+  }
+  @media(max-width:400px){
+    .hero h1{text-shadow:4px 4px 0 var(--ink);-webkit-text-stroke:2px var(--ink);}
+  }
 
   /* ===== HERO ===== */
   .hero{position:relative;padding:70px 0 60px;overflow:hidden;border-bottom:3px solid var(--ink);}
@@ -231,6 +257,21 @@
   .modal .close{margin-top:10px;}
   .modal .x{position:absolute;top:8px;right:12px;font-family:"Big Shoulders Display";font-size:1.5rem;background:none;border:none;cursor:pointer;color:var(--ink);line-height:1;padding:6px;}
 
+  /* confetti of tiny crossed-out yard signs */
+  .confetti{position:fixed;inset:0;z-index:250;pointer-events:none;overflow:hidden;}
+  .confetti i{position:absolute;top:-24px;display:block;background:no-repeat center/contain
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='28' y='26' width='44' height='32' fill='%23f6efda' stroke='%23211f18' stroke-width='5'/%3E%3Crect x='47' y='58' width='6' height='26' fill='%23211f18'/%3E%3Cline x1='20' y1='20' x2='80' y2='80' stroke='%23b3222a' stroke-width='9'/%3E%3C/svg%3E");
+    animation:drop linear forwards;}
+  @keyframes drop{to{transform:translateY(108vh) rotate(540deg);opacity:.85;}}
+
+  /* print-friendly */
+  @media print{
+    .grain,.rays,.ticker,nav,.confetti{display:none!important;}
+    body::before{display:none;}
+    *{box-shadow:none!important;}
+  }
+  section[id]:target .sec-head .no{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:3px;}
+
   /* ===== REDUCED MOTION ===== */
   @media (prefers-reduced-motion: no-preference){
     html{scroll-behavior:smooth;}
@@ -242,10 +283,42 @@
     .ticker .move{animation:none;}
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "End Yard Signs",
+      "url": "https://end-yard-signs.vercel.app/",
+      "slogan": "Signs don't vote. People do.",
+      "description": "A satirical movement to retire the campaign lawn sign and redirect the budget to field organizing."
+    },
+    {
+      "@type": "Product",
+      "name": "The “End Yard Signs” Yard Sign",
+      "description": "An 18″ × 24″ weatherproof coroplast yard sign that says “End Yard Signs.” The irony is the point.",
+      "brand": { "@type": "Brand", "name": "End Yard Signs" },
+      "offers": {
+        "@type": "Offer",
+        "price": "27.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://end-yard-signs.vercel.app/#sign"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="grain"></div>
 <a class="skip" href="#main">Skip to content</a>
+<noscript>
+  <div style="background:#211f18;color:#f6efda;font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;text-align:center;padding:10px 16px;font-size:.85rem;">
+    This page is more fun with JavaScript on &mdash; but the message stands: knock doors, not stakes.
+  </div>
+</noscript>
 
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
@@ -256,6 +329,8 @@
     <span class="star">★</span><span>A stake in the lawn is not a stake in the fight.</span>
     <span class="star">★</span><span>Knock doors, not stakes.</span>
     <span class="star">★</span><span>Your yard is not a strategy.</span>
+    <span class="star">★</span><span>The lawn is not the doorstep.</span>
+    <span class="star">★</span><span>Nobody ever flipped a precinct from their own front lawn.</span>
   </div>
 </div>
 
@@ -326,7 +401,7 @@
       <a class="btn" href="#sign">Buy the Sign &mdash; $27</a>
       <a class="btn gold" href="#demands">Read Our Demands</a>
     </div>
-    <p class="stamp rise" style="animation-delay:.7s">Solidarity Forever &middot; Yard Signs Never</p>
+    <p class="stamp rise" style="animation-delay:.7s">Solidarity Forever &middot; Yard Signs Never &middot; Doors Knocked: Some</p>
   </div>
 </header>
 
@@ -400,7 +475,7 @@
       </div>
       <div class="stat">
         <div class="big" data-count="38" data-prefix="$" data-mil="1">$38M</div>
-        <div class="lab">Spent on signs last cycle that could&rsquo;ve funded 760 organizers.</div>
+        <div class="lab">Spent on signs last cycle that could&rsquo;ve funded 760 organizers, or one (1) consultant.</div>
         <div class="src">Source: a spreadsheet that made us cry</div>
       </div>
     </div>
@@ -416,9 +491,9 @@
     <div class="dlist">
       <div class="ditem"><span class="dn">I.</span><div><h3>Abolish the Lawn Sign</h3><p>Effective immediately. No grandfather clause. Yes, even yours. Yes, even the &ldquo;tasteful&rdquo; one.</p></div></div>
       <div class="ditem"><span class="dn">II.</span><div><h3>Reallocate the Sign Budget to Field</h3><p>Every dollar redirected from coroplast to a paid canvasser. Convert plastic into people.</p></div></div>
-      <div class="ditem"><span class="dn">III.</span><div><h3>One Door Knocked Per Sign Surrendered</h3><p>Bring us your signs. Leave with a turf packet. It&rsquo;s a buyback program with a conscience.</p></div></div>
+      <div class="ditem"><span class="dn">III.</span><div><h3>One Door Knocked Per Sign Surrendered</h3><p>Bring us your signs. Leave with a turf packet and a clipboard. No questions asked, except &ldquo;which precinct.&rdquo;</p></div></div>
       <div class="ditem"><span class="dn">IV.</span><div><h3>A National Day of Stake-Pulling</h3><p>The second Saturday in October. We remove them all and recycle the metal into something useful.</p></div></div>
-      <div class="ditem"><span class="dn">V.</span><div><h3>Mandatory Truth in Yard-Vertising</h3><p>Any remaining sign must read: &ldquo;This sign will not vote for you. I might, if asked nicely.&rdquo;</p></div></div>
+      <div class="ditem"><span class="dn">V.</span><div><h3>Mandatory Truth in Yard-Vertising</h3><p>Any remaining sign must read, in 24-point type: &ldquo;This sign cannot vote, has never voted, and is not registered to vote.&rdquo;</p></div></div>
       <div class="ditem"><span class="dn">VI.</span><div><h3>Free the Intersections</h3><p>Median strips returned to the people. A four-way stop is not a billboard. It is a four-way stop.</p></div></div>
     </div>
   </div>
@@ -447,13 +522,13 @@
         <div class="price tnums">$27<span style="font-size:1.2rem;color:var(--ink)">.00</span></div>
         <p class="pnote">Yes. It is a yard sign. We are aware. The irony is the point, and the irony is free.</p>
         <ul class="feat">
-          <li>18&Prime; &times; 24&Prime; weatherproof coroplast (we hate ourselves too)</li>
+          <li>18&Prime; &times; 24&Prime; weatherproof coroplast (we are aware of what we are. we did it anyway.)</li>
           <li>Rust-resistant H-stake, because commitment</li>
           <li>100% of profits fund actual door-knocking</li>
           <li>Comes with a guilt-free pledge card</li>
         </ul>
         <div class="cond" style="font-size:.8rem;letter-spacing:.1em" id="qtylabel">Quantity</div>
-        <div class="qty" role="group" aria-labelledby="qtylabel">
+        <div class="qty" role="group" aria-labelledby="qtylabel" tabindex="0">
           <button id="minus" type="button" aria-label="Decrease quantity">&ndash;</button>
           <div class="q tnums" id="qval" aria-live="polite" aria-atomic="true">1</div>
           <button id="plus" type="button" aria-label="Increase quantity">+</button>
@@ -474,7 +549,7 @@
     <div class="vgrid">
       <div class="vcard">
         <div class="stars" aria-hidden="true">★★★★★</div>
-        <p class="quote">&ldquo;I spent $4,000 on signs in 2022 and lost by 9 points. This year I bought one sign that says End Yard Signs and knocked 600 doors. We won. Correlation is causation, baby.&rdquo;</p>
+        <p class="quote">&ldquo;I spent $4,000 on signs in 2022 and lost by 9 points. This year I bought one sign that says End Yard Signs and knocked 600 doors. We won. I&rsquo;m not saying it was the sign. But I&rsquo;m not not saying it was the sign.&rdquo;</p>
         <div class="who">Marisol D.</div><div class="role">Recovering Field Director</div>
       </div>
       <div class="vcard">
@@ -495,7 +570,7 @@
 <section class="pledge" id="pledge">
   <div class="wrap">
     <h2>Take the Pledge</h2>
-    <p>&ldquo;I solemnly swear to knock at least one (1) door before I purchase any object made of corrugated plastic, so help me turnout.&rdquo;</p>
+    <p>&ldquo;I solemnly swear to knock at least one (1) door before I purchase any object made of corrugated plastic, so help me turnout. I understand that liking a post does not count as a door.&rdquo;</p>
     <form class="pform" id="pledgeform" novalidate>
       <input type="email" id="email" name="email" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@solidarity.org &mdash; e.g. name@email.com" required aria-label="Email address" />
       <button class="btn gold" type="submit">Sign Me Up</button>
@@ -536,7 +611,7 @@
       </nav>
     </div>
     <p class="foot-fine">
-      This is a work of political satire. The Movement to End Yard Signs is not a real organization, and we will absolutely sell you a yard sign anyway. No yard signs were harmed in the making of this website, though several were strongly judged. If you buy a sign that says &ldquo;End Yard Signs,&rdquo; please appreciate the joke before you plant it. Solidarity forever; yard signs never. &copy; MMXXIV, somewhere near Precinct&nbsp;12.
+      This is a work of political satire. The Movement to End Yard Signs is not a real organization, and we will absolutely sell you a yard sign anyway. No yard signs were harmed in the making of this website. Several were judged. One was reported to the HOA. If you buy a sign that says &ldquo;End Yard Signs,&rdquo; please appreciate the joke before you plant it. Solidarity forever; yard signs never. &copy; MMXXIV, somewhere near Precinct&nbsp;12.
     </p>
   </div>
 </footer>
@@ -564,6 +639,25 @@
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // tiny-yard-sign confetti (respects reduced motion)
+  function confetti(){
+    if(reduce) return;
+    const layer = document.createElement('div');
+    layer.className = 'confetti';
+    layer.setAttribute('aria-hidden','true');
+    document.body.appendChild(layer);
+    for(let n=0;n<28;n++){
+      const s = document.createElement('i');
+      const dur = 2 + Math.random()*1.8, size = 12 + Math.random()*18;
+      s.style.left = Math.random()*100 + 'vw';
+      s.style.width = s.style.height = size + 'px';
+      s.style.animationDuration = dur + 's';
+      s.style.animationDelay = (Math.random()*0.3) + 's';
+      layer.appendChild(s);
+    }
+    setTimeout(()=>layer.remove(), 4200);
+  }
+
   // quantity + price
   const PRICE = 27;
   let qty = 1;
@@ -572,10 +666,16 @@
   function render(){
     qval.textContent = qty;
     const t = (qty*PRICE).toFixed(2);
-    tot.textContent = `${qty} sign${qty>1?'s':''} · $${t} total · ships in a recyclable mailer`;
+    tot.textContent = `${qty} sign${qty>1?'s':''} · $${t} total · free shipping in a recyclable mailer`;
   }
-  document.getElementById('plus').onclick = ()=>{qty=Math.min(99,qty+1);render();};
-  document.getElementById('minus').onclick = ()=>{qty=Math.max(1,qty-1);render();};
+  function inc(){ qty=Math.min(99,qty+1); render(); }
+  function dec(){ qty=Math.max(1,qty-1); render(); }
+  document.getElementById('plus').onclick = inc;
+  document.getElementById('minus').onclick = dec;
+  document.querySelector('.qty').addEventListener('keydown', e=>{
+    if(e.key==='ArrowUp'||e.key==='ArrowRight'){ e.preventDefault(); inc(); }
+    else if(e.key==='ArrowDown'||e.key==='ArrowLeft'){ e.preventDefault(); dec(); }
+  });
 
   // modal with focus management
   const modal = document.getElementById('modal');
@@ -587,6 +687,7 @@
     lastFocus = document.activeElement;
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
+    confetti();
     document.getElementById('modalclose').focus();
   }
   function closeModal(){
@@ -610,7 +711,7 @@
   document.getElementById('buy').onclick = ()=>{
     const t=(qty*PRICE).toFixed(2);
     openModal('Order Received.',
-      `You just spent <strong>$${t}</strong> to put <strong>${qty} sign${qty>1?'s':''}</strong> in your yard that say${qty>1?'':'s'} “End Yard Signs.”<br><br>We are not better than you. None of us are. But the profits knock doors — so welcome to the movement. ✊`);
+      `You just spent <strong>$${t}</strong> to put <strong>${qty} sign${qty>1?'s':''}</strong> in your yard that say${qty>1?'':'s'} “End Yard Signs.”<br><br>We sat with this contradiction for a long time. Then we shipped your order. The profits knock doors — welcome to the movement. ✊`);
   };
 
   // pledge
@@ -630,7 +731,7 @@
       entries.forEach(en=>{
         if(!en.isIntersecting) return;
         const el=en.target, target=+el.dataset.count;
-        const suffix=(el.dataset.suffix||'').replace('&nbsp;',' ');
+        const suffix=(el.dataset.suffix||'').replace(/\u00a0/g,' ');
         const prefix=el.dataset.prefix||'', mil=el.dataset.mil;
         let v=0; const dur=900; const start=performance.now();
         function fr(t){

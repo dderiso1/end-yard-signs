@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Saira+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{
+    background:#ece2c8;color:#211f18;position:relative;
+    display:flex;align-items:center;gap:54px;padding:0 80px;
+    font-family:"Big Shoulders Display",sans-serif;
+  }
+  .rays{position:absolute;top:50%;left:50%;width:1500px;height:1500px;transform:translate(-50%,-50%);opacity:.4;
+    background:repeating-conic-gradient(from 0deg at 50% 50%, #d29b22 0deg 6deg, transparent 6deg 12deg);
+    -webkit-mask-image:radial-gradient(circle,#000 0 32%,transparent 60%);}
+  .seal{flex:none;position:relative;z-index:2;}
+  .copy{position:relative;z-index:2;}
+  .kicker{font-family:"Saira Condensed";font-weight:700;text-transform:uppercase;letter-spacing:.22em;font-size:24px;background:#211f18;color:#f6efda;display:inline-block;padding:8px 18px;margin-bottom:18px;}
+  h1{font-weight:900;text-transform:uppercase;font-size:150px;line-height:.86;color:#b3222a;-webkit-text-stroke:5px #211f18;text-shadow:11px 11px 0 #211f18;}
+  .tag{font-family:"Saira Condensed";font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:38px;margin-top:26px;color:#211f18;}
+  .stripe{position:absolute;bottom:0;left:0;right:0;height:16px;background:repeating-linear-gradient(90deg,#b3222a 0 60px,#211f18 60px 120px);z-index:3;}
+</style>
+</head>
+<body>
+  <div class="rays"></div>
+  <svg class="seal" width="360" height="360" viewBox="0 0 220 220">
+    <defs><path id="ring" d="M110,110 m-86,0 a86,86 0 1,1 172,0 a86,86 0 1,1 -172,0" /></defs>
+    <circle cx="110" cy="110" r="104" fill="#211f18"/>
+    <circle cx="110" cy="110" r="98" fill="#ece2c8"/>
+    <circle cx="110" cy="110" r="92" fill="none" stroke="#211f18" stroke-width="2"/>
+    <text font-family="Saira Condensed, sans-serif" font-weight="700" font-size="15" letter-spacing="2.5" fill="#211f18">
+      <textPath href="#ring" startOffset="0">★ END YARD SIGNS ★ SIGNS DON'T VOTE PEOPLE DO ★</textPath>
+    </text>
+    <circle cx="110" cy="112" r="62" fill="#b3222a" stroke="#211f18" stroke-width="3"/>
+    <g opacity=".35">
+      <line x1="110" y1="112" x2="110" y2="55" stroke="#ece2c8" stroke-width="3"/>
+      <line x1="110" y1="112" x2="155" y2="80" stroke="#ece2c8" stroke-width="3"/>
+      <line x1="110" y1="112" x2="160" y2="125" stroke="#ece2c8" stroke-width="3"/>
+      <line x1="110" y1="112" x2="65" y2="80" stroke="#ece2c8" stroke-width="3"/>
+      <line x1="110" y1="112" x2="60" y2="125" stroke="#ece2c8" stroke-width="3"/>
+    </g>
+    <rect x="86" y="82" width="48" height="34" fill="#ece2c8" stroke="#211f18" stroke-width="3"/>
+    <rect x="107" y="116" width="6" height="26" fill="#211f18"/>
+    <rect x="98" y="92" width="24" height="4" fill="#b3222a"/>
+    <rect x="98" y="100" width="24" height="4" fill="#b3222a"/>
+    <line x1="74" y1="78" x2="146" y2="146" stroke="#211f18" stroke-width="11"/>
+    <line x1="74" y1="78" x2="146" y2="146" stroke="#d29b22" stroke-width="5"/>
+  </svg>
+  <div class="copy">
+    <span class="kicker">A Movement of Frustrated Campaign Staffers</span>
+    <h1>End<br>Yard<br>Signs</h1>
+    <div class="tag">Signs Don't Vote. People Do.</div>
+  </div>
+  <div class="stripe"></div>
+</body>
+</html>
